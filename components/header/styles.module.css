@@ -1,7 +1,7 @@
 .header {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 }
-.header {
+.headerWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,7 +15,7 @@
   letter-spacing: -1px;
   color: #fafafa;
 }
-.navigattionMenu {
+.navigationMenu {
   display: flex;
   gap: 48px;
   color: #fafafa;
