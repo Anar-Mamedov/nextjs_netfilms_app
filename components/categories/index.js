@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-import styles from "./sytles.module.css";
+import styles from "./styles.module.css";
 
 function Categories({ categories }) {
   return (
