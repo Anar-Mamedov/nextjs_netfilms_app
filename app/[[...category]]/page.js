@@ -1,16 +1,29 @@
 import React from "react";
 import HomeContainer from "@/containers/home";
 
-import { getSingleCategory, getCategories, getPopularMovies, getTopRatedMovies } from "@/services/movie";
+import {
+  getSingleCategory,
+  getCategories,
+  getPopularMovies,
+  getTopRatedMovies,
+} from "@/services/movie";
 
 async function HomePage({ params }) {
   let selectedCategory;
 
-  const topRatedPromise = getTopRatedMovies();
-  const popularPromise = getPopularMovies();
-  const categoriesPromise = getCategories();
+  // const topRatedPromise = getTopRatedMovies();
+  // const popularPromise = getPopularMovies();
+  // const categoriesPromise = getCategories();
 
-  const [{ results: topRatedMovies }, { results: popularMovies }, { genres: categories }] = await Promise.all([topRatedPromise, popularPromise, categoriesPromise]);
+  const [
+    { results: topRatedMovies },
+    { results: popularMovies },
+    { genres: categories },
+  ] = await Promise.all([
+    getTopRatedMovies(),
+    getPopularMovies(),
+    getCategories(),
+  ]);
 
   if (params.category?.length > 0) {
     const { results } = await getSingleCategory(params.category[0]);
